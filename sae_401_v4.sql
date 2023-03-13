@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS escapeGame (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(64),
     nameFR VARCHAR(64),
     puzzles INT,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS escapeGame (
 );
 
 CREATE TABLE IF NOT EXISTS escapeGamePrice (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     escapeGameId INT,
     2_3Persons FLOAT,
     4Persons FLOAT,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS escapeGamePrice (
 );
 
 CREATE TABLE IF NOT EXISTS contactForm (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     date DATE,
     firstName VARCHAR(32),
     lastName VARCHAR(32),
@@ -40,14 +40,14 @@ CREATE TABLE IF NOT EXISTS contactForm (
 );
 
 CREATE TABLE IF NOT EXISTS user (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(255),
     password VARCHAR(255),
     rights SET('superadmin', 'editor', 'management', 'jobs', 'admin')
 );
 
 CREATE TABLE IF NOT EXISTS reviews (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(32),
     lastName VARCHAR(32),
     description TEXT,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS reviews (
 );
 
 CREATE TABLE IF NOT EXISTS escapeGameSale (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     userId INT,
     reservationId INT,
     id_user INT REFERENCES user(id)
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS escapeGameSale (
 
 
 CREATE TABLE IF NOT EXISTS reservation (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     date DATE,
     hours TINYINT,
     escapeGameId INT,
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS reservation (
 );
 
 CREATE TABLE IF NOT EXISTS giftCard (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     type ENUM('money','escape'),
     price FLOAT,
     escapeGameId INT,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS giftCard (
 );
 
 CREATE TABLE IF NOT EXISTS giftCardSale (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     userId INT,
     giftCardId INT,
     id_giftCard INT REFERENCES giftCard(id),
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS giftCardSale (
 );
 
 CREATE TABLE IF NOT EXISTS qAndACat (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255),
     titleFR VARCHAR(255),
     escapeGamesId INT,
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS qAndACat (
 );
 
 CREATE TABLE IF NOT EXISTS qAndAQuestion (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255),
     titleFR VARCHAR(255),
     answer TEXT,
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS qAndAQuestion (
 );
 
 CREATE TABLE IF NOT EXISTS jobs (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255),
     titleFR VARCHAR(255),
     position VARCHAR(255),
