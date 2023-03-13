@@ -1,0 +1,34 @@
+escapeGame: #id[INT], name[varchar(64)], nameFR[varchar(64)], puzzles[INT] , adventures[INT], spots[INT], story[INT], description[TEXT], descriptionFR[TEXT] , address[varchar(255)], visible[BOOLEAN]
+possede,11 escapeGame, 11 escapeGamePrice
+escapeGamePrice: #id[INT], 2_3Persons[FLOAT], 4Persons[FLOAT], 5Persons[FLOAT], 6Persons[FLOAT], 7Persons[FLOAT], 8Persons[FLOAT], 9Persons[FLOAT], 10Persons[FLOAT], 11Persons[FLOAT], 12Persons[FLOAT], 12PlusPersons[FLOAT]
+
+:
+:
+contactForm: #id[INT], date[DATE] , firstName[varchar(32)], lastName [varchar(32)], email[VARCHAR(255)], phone[INT], message[TEXT]
+reservation: #id[INT], date[DATE], hours[TINYINT], nbPersons[TINYINT], firstName[varchar(32)], lastName[varchar(32)]
+reserve, 1N escapeGame, 11 reservation
+
+
+giftCard: #id[INT],type , price[FLOAT], nbPersons[TINYINT] //type[ENUM('money','escape')]
+lieEscapeGame, 11 escapeGame, 11 giftCard
+:
+:
+giftCardSale: #id[INT]
+acheteCard, 0N user, 11 giftCardSale
+
+lieCard, 11 giftCard, 11 giftCardSale
+
+qAndACat: #id[INT], title[VARCHAR(255)], titleFR[VARCHAR(255)]
+appartient, 11escapeGame, 11 qAndACat
+
+qAndAQuestion: #id[INT], title[VARCHAR(255)], titleFR[VARCHAR(255)], answer[TEXT], answerFR[TEXT]
+categorise, 11 qAndAQuestion, 1N qAndACat
+
+jobs: #id[INT], title[VARCHAR(255)], titleFR[VARCHAR(255)], position[VARCHAR(255)], positionFR[VARCHAR(255)], task[TEXT], taskFR[TEXT], strength[TEXT], strengthFR[TEXT], visible[BOOLEAN]
+user: #id[INT], email[VARCHAR(255)], password[VARCHAR(255)], rights // Add this to rights[SET('superadmin', 'editor', 'management', 'jobs', 'admin')]
+reviews: #id[INT], firstName[varchar(32)], lastName[varchar(32)], description[TEXT], descriptionFR[TEXT], rating[FLOAT]
+
+escapeGameSale: #id[INT]
+:
+achete, 0N user, 11 escapeGameSale
+lie, 11 reservation, 11 escapeGameSale
