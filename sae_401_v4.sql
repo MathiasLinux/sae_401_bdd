@@ -60,6 +60,8 @@ CREATE TABLE IF NOT EXISTS user (
     id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(255),
     password VARCHAR(255),
+    firstName VARCHAR(32),
+    lastName VARCHAR(32),
     rights SET('superadmin', 'editor', 'management', 'jobs', 'admin')
 );
 
