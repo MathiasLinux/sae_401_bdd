@@ -1,0 +1,19 @@
+[1muser[0m ([4mid_user[0m, email, password, firstName, lastName, rights)
+
+[1mescapeGame[0m ([4mid_escapeGame[0m, name, nameFR, puzzles, adventures, spots, story, description, descriptionFR, address, visible, price2_3Persons, price4Persons, price5Persons, price6Persons, price7Persons, price8Persons, price9Persons, price10Persons, price11Persons, price12Persons, price12PlusPersons)
+
+[1mgiftCard[0m ([4mid_giftCard[0m, buyingDate, type, amount, code, usageDate, #id_giftCardAmount, #id_escapeGame, #id_user)
+
+[1mgiftCardAmount[0m ([4mid_giftCardAmount[0m, price)
+
+[1mqAndACat[0m ([4mid_qAndACat[0m, title, titleFR, #id_escapeGame)
+
+[1mqAndAQuestion[0m ([4mid_qAndAQuestion[0m, title, titleFR, answer, answerFR, #id_qAndACat)
+
+[1mjobs[0m ([4mid_jobs[0m, title, titleFR, position, positionFR, task, taskFR, strength, strengthFR, visible)
+
+[1mcontactForm[0m ([4mid_contactForm[0m, date, firstName, lastName, email, phone, message)
+
+[1mreviews[0m ([4mid_reviews[0m, firstName, lastName, description, descriptionFR, rating, #id_escapeGame)
+
+[1mbuying[0m ([4m#id_user[0m, [4m#id_escapeGame[0m, id_buying, buyingDate, gameDate, nbPlayers, buyersFirstName, buyersLastName, type)
