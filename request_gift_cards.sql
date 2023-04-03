@@ -6,3 +6,5 @@ SELECT DATE_FORMAT(buyingDate, '%d/%m/%Y') AS buyingDate, code, DATE_FORMAT(usag
 SELECT eG.name, eG.nameFR, DATE_FORMAT(gameDate, '%d/%m/%Y') AS gameDateDisplay, nbPlayers, buyersFirstName, buyersLastName FROM buying INNER JOIN escapeGame eG on buying.id_escapeGame = eG.id_escapeGame WHERE id_user = 1 AND gameDate > CURDATE();
 
 SELECT CURDATE();
+
+SELECT DATE_FORMAT(gameDate, '%d/%m/%Y') AS gameDateDisplay, hours, eG.name, eG.nameFR, nbPlayers, buyersFirstName, buyersLastName from buying INNER JOIN escapeGame eG on buying.id_escapeGame = eG.id_escapeGame;
